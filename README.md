@@ -1,0 +1,87 @@
+Monday.com Business Chat Helper
+A simple chat tool that answers your business questions using data from Monday.com boards (Work Orders and Deals).
+
+What It Does
+Ask questions in plain English like "How's our sales pipeline?" or "What's our total revenue?"
+
+Gets live answers from your Monday.com data
+
+Works like chatting with a smart assistant about your business
+
+Quick Start (3 minutes)
+Install (copy & paste in terminal/command prompt):
+
+text
+pip install flask pandas openpyxl flask-cors flask-limiter requests
+Put your Excel files in the Downloads folder:
+
+Deal funnel Data.xlsx
+
+Work Order Tracker Data.xlsx
+
+Start it:
+
+text
+python app.py
+Open browser → go to http://localhost:5000
+
+Done! Start asking questions in the chat box.
+
+Example Questions You Can Ask
+text
+"How's our pipeline looking?"
+"Show me all open deals"
+"What's our total revenue?"
+"How's the mining sector doing?"
+"Show me deals by sector"
+What You Get
+text
+✅ Answers in seconds
+✅ Handles messy data (missing values, different formats)
+✅ Updates automatically when files change
+✅ Works with Monday.com live data too
+Folder Structure
+text
+monday_bi_agent/
+├── app.py          # Main program (don't touch)
+├── .env           # Settings (edit paths here if needed)
+├── data files     # Your Excel files go here
+└── website files  # Chat interface
+Settings (Optional)
+Create .env file to change things:
+
+text
+DEALS_FILE=C:/path/to/your/deals.xlsx
+WORK_ORDERS_FILE=C:/path/to/your/workorders.xlsx
+Production Mode (for teams)
+text
+export FLASK_ENV=production
+python app.py
+Connect to Monday.com (Optional)
+Add these to .env:
+
+text
+USE_LIVE_API=true
+MONDAY_API_KEY=your_api_key
+MONDAY_BOARD_ID_DEALS=123456789
+MONDAY_BOARD_ID_WORK_ORDERS=987654321
+Useful Links
+Chat: http://localhost:5000
+
+Health check: http://localhost:5000/api/health
+
+Refresh data: http://localhost:5000/api/refresh
+
+Clear cache: http://localhost:5000/api/cache/clear
+
+Troubleshooting
+"File not found" → Check file paths in .env
+"Port busy" → Kill other apps or change port
+No answers → Check if Excel files have data
+
+Tech Used (For Curious Minds)
+Python + Flask (web server)
+
+Pandas (Excel reading)
+
+HTML/CSS/JS (chat interface)
